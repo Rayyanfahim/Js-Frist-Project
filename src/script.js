@@ -1,34 +1,46 @@
 const form = document.querySelector("#form");
 const mainInput = document.querySelector("#mainInput");
 
-const userList = document.querySelector("#printHere");
+const userList = document.querySelector("#ListPrintHere");
 
 const getNumber = document.querySelector("#getNumber");
-const userNeed = document.querySelector("#userNeed");
+const userNeedItem = document.querySelector("#userNeedItem");
+
+const userNeedPrint = document.querySelector("#userNeedPrint");
 
 const userListArray = [];
 
-form.addEventListener("submit", (e) => {
-  e.preventDefault;
-  const formInput = mainInput.value;
+form.addEventListener("click", () => {
+  let formInput = mainInput.value;
   userListArray.push(formInput);
 
-  userList.innerHTML = "";
+  if (formInput === "") {
+    alert("Please enter a number");
+  } else {
+    userList.innerHTML = "";
 
-  for (item of userListArray) {
-    const listItem = document.createElement("h5");
-    listItem.innerText = item;
-    userList.appendChild(listItem);
+    for (item of userListArray) {
+      const listItem = document.createElement("h5");
+      listItem.innerText = item;
+      userList.appendChild(listItem);
+    }
+
+    mainInput.value = "";
   }
-  console.log(userListArray);
-  // mainInput.value = "";
 });
 
-function ranomize(array) {
+function randomIndex(array) {
   const randomIndex = Math.floor(Math.random() * array.length);
   return array[randomIndex];
 }
 
-// setInterval(() => {
-//   console.log(userListArray);
-// }, 1000);
+userNeedItem.addEventListener("click", () => {
+  let getFormInput = getNumber.value;
+  let test = randomIndex(userListArray);
+
+  for (Item of userListArray) {
+    const listItem = document.createElement("h5");
+    userNeedPrint.innerText = test;
+    userNeedPrint.appendChild(Item);
+  }
+});

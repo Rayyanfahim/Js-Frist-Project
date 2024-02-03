@@ -9,24 +9,38 @@
 </head>
 
 <body>
+
     <section class="flex justify-center items-center h-screen flex-col gap-y-7">
+
         <h1 class="font-semibold text-4xl">Random Picker</h1>
-        <section id="input-section">
-            <form action="#" id="form">
+
+        <section>
+            <form action="#">
                 <input id="mainInput" type="text" class="border-solid border-2 border-black focus:rounded-none">
-                <input type="submit" class="bg-blue-600 text-white p-[0.3rem] rounded-md cursor-pointer">
+                <button id="form" type="submit"
+                    class="bg-blue-600 text-white p-[0.3rem] rounded-md cursor-pointer">Add</button>
             </form>
         </section>
-        <div id="printHere">Print Items</div>
+
+        <div id="ListPrintHere">Your Items</div>
+
         <section>
-            <h1 class=" h-12 w-full text-2xl">I Want <input id="getNumber" type="text"
-                    class="border-solid border-2 border-black focus:rounded-none" size="1px"> <button
-                    class="bg-blue-600 text-white p-[0.2rem] rounded-md">Items</button>
-                From The List
-                Above!</h1>
+            <h1 class="text-2xl">I Want Below Numbers of Items From The List Above!</h1>
         </section>
-        <h2 id="userNeed">printHere</h2>
+
+        <section id="input-section">
+            <form action="#" id="form">
+                <input id="getNumber" size="1px" type="text"
+                    class="border-solid border-2 border-black focus:rounded-none">
+                <button id="userNeedItem" type="submit"
+                    class="bg-blue-600 text-white p-[0.3rem] rounded-md cursor-pointer">Get</button>
+            </form>
+        </section>
+
+        <h2 id="userNeedPrint">Get Items</h2>
+
     </section>
+
     <script src="./script.js"></script>
 </body>
 
